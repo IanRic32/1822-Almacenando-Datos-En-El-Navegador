@@ -6,9 +6,9 @@ export const addTask = (evento)=> {
     const task = createTask(evento);
     list.appendChild(task);
   }
-  const taskList = [];  
 const createTask = (evento) => {
     evento.preventDefault();
+    const taskList = JSON.parse(localStorage.getItem("task") ||[] );  
     const input = document.querySelector('[data-form-input]');
     const calendar= document.querySelector("[data-form-date]");
   
