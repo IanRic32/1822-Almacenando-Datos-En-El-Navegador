@@ -12,7 +12,8 @@ export const addTask = (evento)=> {
     const dateFormat = moment(date).format('DD/MM/YYYY');
 
     input.value = '';
-    calendar.valur= "";
+    calendar.value= "";
+
     const taskObj = {
         value,
         dateFormat
@@ -27,22 +28,22 @@ export const addTask = (evento)=> {
     list.appendChild(task);
   };
 const createTask = ({value,dateFormat}) => {  
-    const task = document.createElement('li');
+  const task = document.createElement('li');
     task.classList.add('card');
     //backticks
-    const taskContent = document.createElement('div');
+  const taskContent = document.createElement('div');
   
   //ocuparemos la libreria moment la cual nos deja estandarizar las fechas
     const titleTask = document.createElement('span');
-    titleTask.classList.add('task');
-    titleTask.innerText = value;
-    taskContent.appendChild(checkComplete());
-    taskContent.appendChild(titleTask);
+          titleTask.classList.add('task');
+          titleTask.innerText = value;
+          taskContent.appendChild(checkComplete());
+          taskContent.appendChild(titleTask);
     // task.innerHTML = content;
     const dateElement = document.createElement("span") ;
-    dateElement.innerHTML = dateFormat;
-    task.appendChild(taskContent);
-    task.appendChild(dateElement);
-    task.appendChild(deleteIcon());
+          dateElement.innerHTML = dateFormat;
+          task.appendChild(taskContent);
+          task.appendChild(dateElement);
+          task.appendChild(deleteIcon());
     return task;
   };
