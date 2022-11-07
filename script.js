@@ -6,14 +6,18 @@ const btn = document.querySelector('[data-form-btn]');
 const createTask = (evento) => {
   evento.preventDefault();
   const input = document.querySelector('[data-form-input]');
+  const calendar= document.querySelector("[data-form-date]");
+
   const value = input.value;
+  const date = calendar.value;
+  const dateFormat = moment(date).format('DD/MM/YYYY');
   const list = document.querySelector('[data-list]');
   const task = document.createElement('li');
   task.classList.add('card');
   input.value = '';
   //backticks
   const taskContent = document.createElement('div');
-
+//ocuparemos la libreria moment la cual nos deja estandarizar las fechas
   const titleTask = document.createElement('span');
   titleTask.classList.add('task');
   titleTask.innerText = value;
